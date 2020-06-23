@@ -76,8 +76,26 @@ header h1
     }
     nav div
     {
+        width: 22%;
+        color: white;
+        text-align: center;
         padding:8px 0px;
+        border-radius: 22px;
+
     }
+    nav div:nth-child(even)
+
+    {
+
+        background-color: #ab266e;
+    }
+    nav div:nth-child(odd)
+
+    {
+
+        background-color: rgba(44, 7, 69, 0.31);
+    }
+
     .middle img
     {
         width: 40%;
@@ -122,7 +140,7 @@ header h1
         justify-content: space-evenly;
     }
 
-    
+
 
 
 </style>
