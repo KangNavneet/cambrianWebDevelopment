@@ -140,7 +140,30 @@ header h1
         justify-content: space-evenly;
     }
 
+    @media screen and (max-width: 1100px) {
 
+        .middle
+        {
+            display: inline-block;
+
+
+        }
+        .middle img,.middle .message
+        {
+            width:95%;
+            height:30%;
+            border-radius: 5%;
+        }
+    }
+    @media screen and (max-width: 480px)
+    {
+        .row .message
+        {
+            width:95%;
+            height:30%;
+        }
+
+    }
 
 
 </style>
