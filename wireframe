@@ -20,16 +20,31 @@
         font-size: 30px;
     }
 
+header
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+    width: 100%;
 
+}
+header img
+{
+    width: 15%;
+
+}
+
+header h1
+{
+    width: 70%;
+    height: 25%;
+}
     .row h1
     {
         color: #286c0e;
         text-align: center;
 
-    }
-    .row img
-    {
-        width:10%
     }
 
     .row
@@ -38,8 +53,8 @@
         display:flex;
         flex-flow:row;
         flex-wrap:wrap;
-        flex-grow:unset;
-        justify-content:space-around;
+
+        justify-content:space-evenly;
         height:20%;
         position: relative;
     }
@@ -107,6 +122,8 @@
         justify-content: space-evenly;
     }
 
+    
+
 
 </style>
 
@@ -114,11 +131,13 @@
 <body>
 <div class="container">
     <div class="row">
+        <header>
     <img src="https://placekitten.com/408/287" alt="Kitten Image">
 
     <h1>Wireframe Demonstration</h1>
-
+        </header>
     </div>
+
 
     <div class="row">
         <nav>
