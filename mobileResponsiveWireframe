@@ -11,7 +11,7 @@
     }
     .container{
         background-color: white;
-        
+
 
 
 
@@ -21,26 +21,26 @@
         font-size: 20px;
     }
 
-header
-{
-    display: flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-    justify-content:flex-start;
-    width: 100%;
+    header
+    {
+        display: flex;
+        flex-direction: row;
+        flex-wrap:wrap;
+        justify-content:flex-start;
+        width: 100%;
 
-}
-header img
-{
-    width: 15%;
+    }
+    header img
+    {
+        width: 15%;
 
-}
+    }
 
-header h1
-{
-    width: 70%;
-    height: 20%;
-}
+    header h1
+    {
+        width: 70%;
+        height: 20%;
+    }
     .row h1
     {
         color: #286c0e;
@@ -155,25 +155,35 @@ header h1
             height:30%;
             border-radius: 5%;
         }
-        
+
+
+
+    }
+    @media screen and (max-width: 700px)
+    {
+        .row .message
+        {
+            width:95%;
+            height:30%;
+        }
         p
         {
             font-size:34px;
         }
         nav
         {
-             font-size:34px;
-            
-            
+            font-size:34px;
+
+
         }
         nav div
         {
             width:98%;
             margin:0px;
             border-radius:2px;
-            
+
         }
-        
+
         header img
         {
             width: 35%;
@@ -185,16 +195,26 @@ header h1
             width: 60%;
             height: 55%;
         }
-        
+
+
+
     }
-    @media screen and (max-width: 1080px)
+
+    @media screen and (max-width: 980px)
     {
+
+
         .row .message
         {
-            width:95%;
-            height:30%;
+            word-wrap: break-word;
+            display:inline-block;
+            min-width:10ch;
+            border-bottom:4px rgba(255, 37, 0, 0.89) dashed;
+            padding:0px 14px;
         }
-        
+        .message{
+            min-width:10rem;
+        }
 
 
     }
@@ -207,30 +227,30 @@ header h1
 <div class="container">
     <div class="row">
         <header>
-    <img src="https://placekitten.com/408/287" alt="Kitten Image">
+            <img src="https://placekitten.com/408/287" alt="Kitten Image">
 
-    <h1>Wireframe Demonstration</h1>
+            <h1>Wireframe Demonstration</h1>
         </header>
     </div>
 
 
     <div class="row">
         <nav>
-    <div>HOME</div>
-    <div>ABOUT US</div>
-    <div>CONTACT US</div>
-    <div>SERVICES</div>
+            <div>HOME</div>
+            <div>ABOUT US</div>
+            <div>CONTACT US</div>
+            <div>SERVICES</div>
         </nav>
     </div>
     <div class="row">
         <div class="middle">
-        <img src="https://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2017/12/13/Pictures/_f419ebc0-dfc2-11e7-8c02-0f57a5c79e45.jpg" >
-        <div class="message">
-            <h1>Message</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus excepturi ipsa natus nostrum, quisquam ullam voluptatibus? At consequatur cupiditate delectus est facilis fugiat molestiae optio quam! Aliquam ducimus quam ratione!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci deleniti, doloribus harum hic quaerat repellat! Assumenda beatae cum enim incidunt molestias praesentium sed! Dolorum ex harum, ipsa sapiente tenetur ullam.</p>
-            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, quis, quisquam. Amet commodi deserunt exercitationem illo iure nobis, odit quaerat quis rem, repellendus sequi sunt temporibus, vitae? Animi, explicabo sed!</span><span>Asperiores aut dolorem enim error expedita harum necessitatibus nulla quas sint? Accusamus aliquam, asperiores commodi doloribus error est harum labore maiores nemo, neque odio, porro quas quia soluta unde voluptas.</span></p>
-        </div>
+            <img src="https://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2017/12/13/Pictures/_f419ebc0-dfc2-11e7-8c02-0f57a5c79e45.jpg" >
+            <div class="message">
+                <h1>Message</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus excepturi ipsa natus nostrum, quisquam ullam voluptatibus? At consequatur cupiditate delectus est facilis fugiat molestiae optio quam! Aliquam ducimus quam ratione!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci deleniti, doloribus harum hic quaerat repellat! Assumenda beatae cum enim incidunt molestias praesentium sed! Dolorum ex harum, ipsa sapiente tenetur ullam.</p>
+                <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, quis, quisquam. Amet commodi deserunt exercitationem illo iure nobis, odit quaerat quis rem, repellendus sequi sunt temporibus, vitae? Animi, explicabo sed!</span><span>Asperiores aut dolorem enim error expedita harum necessitatibus nulla quas sint? Accusamus aliquam, asperiores commodi doloribus error est harum labore maiores nemo, neque odio, porro quas quia soluta unde voluptas.</span></p>
+            </div>
         </div>
     </div>
 
@@ -252,14 +272,14 @@ header h1
 
 
 
-            <div class="row">
-                <footer>
-                <h1>Footer Section</h1>
-                <h2>Author: NAVNEET KANG</h2>
+    <div class="row">
+        <footer>
+            <h1>Footer Section</h1>
+            <h2>Author: NAVNEET KANG</h2>
 
 
         </footer>
-            </div>
+    </div>
 
 
 </div>
