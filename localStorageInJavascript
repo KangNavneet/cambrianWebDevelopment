@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Load Storage</title>
+</head>
+
+
+
+<style>
+    input
+    {
+        width:90%;
+        padding: 10px;
+        margin:10px;
+    }
+    #container
+    {
+        width:500px;
+        margin:5% 25% ;
+        background-color: blanchedalmond;
+
+    }
+    label
+    {
+        padding: 20px;
+        margin:5px;
+        color: #ab266e;
+        size: 20px;
+        font-family: "Arial Black";
+    }
+
+</style>
+<body>
+<div id="container">
+
+    <div id="dataEntry" style="display: none">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name">
+    <input type="Submit" style="width:100px" onclick="submitData()"/>
+    </div>
+    <p style="display: none" id="displayName"></p>
+
+</div>
+</body>
+<script>
+    var name;
+
+    /*TEXTBOX FOR NAME*/
+    function enterName()
+    {
+        var query=document.querySelector('input[name="name"]');
+
+        name=(query.value).trim();
+    }
+
+    /*INTIAL CALL*/
+    enterName();
+    var dataEntry=document.querySelector('#dataEntry');
+    var displayName=document.querySelector('p');
+    var localName=localStorage.getItem('name');
+    if(localName==null)
+    {
+        alert('Local Storage Is Empty');
+        dataEntry.style.display="block";
+
+    }
+    else
+    {
+        alert("Hello "+localName);
+        displayName.style.display="block";
+        displayName.innerText="Hello,"+localName;
+
+    }
+
+
+/*SUBMIT DATA OF TEXTBOX*/
+    function submitData()
+    {
+        enterName();
+        if(name.length>0)
+        {
+            alert(name);
+            localStorage.setItem('name',name);
+            window.location.reload()
+        }
+        else
+        {
+            alert("Fill Name First");
+        }
+    }
+
+
+
+
+</script>
+
+</html>
