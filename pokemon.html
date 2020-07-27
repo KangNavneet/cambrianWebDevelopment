@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Hello!</title>
+
+<style>
+
+
+    #container
+    {
+        width:500px;
+        height:400px;
+        margin-left:200px;
+        background-color: #ab266e;
+        color: aliceblue;
+        text-align: center;
+    }
+    .button
+    {
+        background-color: #f6cd61; /* Green */
+        border: none;
+        color:  #1e1f26;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    body {
+        font-family: helvetica, arial, sans-serif;
+        margin: 2em;
+    }
+
+    h1
+    {
+        font-style:normal;
+        font-weight: bold;
+        font-family: "Comic Sans MS";
+
+    }
+
+    #pokename
+    {
+        color: white;
+        text-transform: capitalize;
+    }
+    img
+    {
+        width:150px;
+        height:150px;
+        background-color: blanchedalmond;
+    }
+    #pokenumber
+    {
+        width: 100px;
+        height:25px;
+        color: #ab2660;
+        font-weight: bold;
+
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-left: 90px;
+        text-align: start;
+
+    }
+    span
+    {
+        font-family:arial;
+        font-weight: bold;
+        color:white;
+        font-size: 24px;
+    }
+
+
+
+
+
+</style>
+
+
+
+</head>
+<body>
+<div id="container">
+
+
+<form id="pokesubmit">
+    <label>Poke Number: <input  type="number" name="pokenumber" id="pokenumber"></label>
+    <input class="button"  type="submit">
+</form>
+
+
+    <article id="pokedata">
+
+        <div>
+        <span id="pokeId"></span>
+        </div>
+        <div>
+        <span id="pokename"></span>
+        </div>
+        <div>
+
+        <img style="visibility: hidden" id="front-image">
+        </div>
+        <div>
+        <span id="pokeWeight"></span>
+        </div>
+        <div>
+            <span id="pokeHeight"></span>
+        </div>
+        <div>
+            <span id="pokeOrder"></span>
+        </div>
+        <div>
+        <span id="baseExp"></span>
+        </div>
+
+    </article>
+
+</div>
+</body>
+
+<script>
+    function pokesubmit(evt) {
+        evt.preventDefault();
+
+        let val = document.querySelector('#pokenumber').value;
+
+        fetch(`https://pokeapi.co/api/v2/pokemon/${val}/`).then(
+            (data) => {
+                console.log(data);
+                return data.json();
+                //console.log(pokemon);
+            }
+        ).then(
+            (pokemon) => {
+
+                let name = document.querySelector('#pokename');
+                name.innerText ="Name  :" + pokemon.name;
+
+
+                let id = document.querySelector('#pokeId');
+                id.innerText ="Id    :   " +pokemon.id;
+
+
+                let height = document.querySelector('#pokeHeight');
+                height.innerText ="Height:"+ pokemon.height;
+
+
+                let weight = document.querySelector('#pokeWeight');
+                weight.innerText = "Weight:"+pokemon.weight;
+
+
+                let order = document.querySelector('#pokeOrder');
+                order.innerText = "Order :"+pokemon.order;
+
+
+                let baseExp = document.querySelector('#baseExp');
+                baseExp.innerText ="Base Experience:"+ pokemon.base_experience;
+
+                let img = document.querySelector('#front-image');
+                img.style.visibility="visible";
+                img.src = pokemon.sprites.front_default;
+
+
+
+
+            }
+        )
+
+    }
+    const form = document.querySelector('#pokesubmit');
+    form.addEventListener('submit', pokesubmit);
+
+
+
+
+</script>
+</html>
